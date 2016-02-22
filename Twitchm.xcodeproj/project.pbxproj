@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03E18E2D7BCC43C00F53B471 /* Pods_Twitchm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC315308FDED6D7E82E7659 /* Pods_Twitchm.framework */; };
 		5970C7051C71961000DA4CD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5970C7041C71961000DA4CD4 /* AppDelegate.swift */; };
 		5970C7071C71961000DA4CD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5970C7061C71961000DA4CD4 /* ViewController.swift */; };
 		5970C70A1C71961000DA4CD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5970C7081C71961000DA4CD4 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		5970C7221C7552D700DA4CD4 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		5970C7261C795FFD00DA4CD4 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		5970C7291C7976BF00DA4CD4 /* twittterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = twittterCell.swift; sourceTree = "<group>"; };
+		7DC315308FDED6D7E82E7659 /* Pods_Twitchm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitchm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD98B62D0E7607A5EF276897 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,6 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C63E13D87B9B368F8DAB3D40 /* Pods.framework in Frameworks */,
+				03E18E2D7BCC43C00F53B471 /* Pods_Twitchm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				DD98B62D0E7607A5EF276897 /* Pods.framework */,
+				7DC315308FDED6D7E82E7659 /* Pods_Twitchm.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -241,7 +245,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Twitchm/Pods-Twitchm-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F0A2B793BAA4AA7D79D42056 /* Embed Pods Frameworks */ = {
@@ -256,7 +260,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Twitchm/Pods-Twitchm-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

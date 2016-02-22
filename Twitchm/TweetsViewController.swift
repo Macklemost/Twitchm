@@ -19,6 +19,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         
         self.tableView.reloadData()
+        
+        TwitterClient.sharedInstance.homeTimeline(nil) { (tweets, error) -> () in
+            self.tweets = tweets
+            self.tableView.reloadData()
+        }
+                print("TimeLine error in TVC")
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,8 +42,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("twitterCell", forIndexPath: indexPath) as! twittterCell
-        //cell.tweet = tweets![indexPath.row]
-        
+        if tweets != nil{
+        cell.tweet = tweets![indexPath.row]
+        }
         return cell
         
     }

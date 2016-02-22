@@ -63,17 +63,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
         
         TwitterClient.sharedInstance.openURL(url)
-        TwitterClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> () in
+        /*TwitterClient.sharedInstance.homeTimeline(nil, success: { (tweets: [Tweet]) -> () in
             for tweet in tweets{
                 print(tweet.text)
             }
             }) { (error: NSError) -> () in
                 print(error.localizedDescription)
-        }
+        }*/
         
                 return true
         
     }
-
-}
+    }
 
