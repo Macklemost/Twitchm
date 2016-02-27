@@ -23,14 +23,14 @@ class twittterCell: UITableViewCell {
     var tweet: Tweet! {
         didSet {
             tweetTextLabel.text = tweet.text
+            tweetTextLabel.sizeToFit()
             usernameLabel.text = tweet.user?.screenname
             nameLabel.text = tweet.user?.name
-            timestampLabel.text = tweet.createdAtString
-            profileImageView.setImageWithURL(NSURL(string: "https://www2.pictures.zimbio.com/bg/Social+Network+Pictures+N0JKQhViZRGl.jpg")!)
-            //profileImageView.setImageWithURL((tweet.user?.profileimageUrl)!)
+            timestampLabel.text = String(tweet.createdAt!)
+            //profileImageView.setImageWithURL((tweet?.user!.profileimageUrl)!)
             retweetLabel.text = ("\(tweet.retweet!)")
             likeLabel.text = ("\(tweet.favorites!)")
-            
+            profileImageView.setImageWithURL(NSURL(string: "https://20something1thinking.files.wordpress.com/2014/05/12-positive-body-image-from-michelbritney00-blogspot-com-1.jpg")!)
             
         }
     }

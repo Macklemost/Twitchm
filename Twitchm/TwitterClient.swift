@@ -57,6 +57,10 @@ class TwitterClient: BDBOAuth1SessionManager {
             }
         }
     
+    func sendLike(url: NSURL) {
+        
+    }
+    
     func openURL(url: NSURL) {
         fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential (queryString: url.query), success: {(accessToken: BDBOAuth1Credential!) -> Void in
             print("Got the access token!")

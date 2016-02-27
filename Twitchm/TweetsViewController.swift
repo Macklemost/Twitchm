@@ -12,11 +12,14 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     var tweets: [Tweet]?
+    var tweet: Tweet!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 340
         
         self.tableView.reloadData()
         
@@ -49,4 +52,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TwitterDetailView" {
+            let cell = sender as! twittterCell
+            let detailedTweet = cell.tweet
+            let destinationViewController = segue.destinationViewController as! TweetDetailViewController
+            destinationViewController.tweet = detailedTweet
+        }
+    }
 }

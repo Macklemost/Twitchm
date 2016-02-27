@@ -16,7 +16,7 @@ class User: NSObject {
     
     var name: String?
     var screenname: String?
-    var profileimageUrl: NSURL?
+    var profileimageUrl: NSURL!
     var tagline: String?
     var dictionary: NSDictionary
     
@@ -24,12 +24,12 @@ class User: NSObject {
         self.dictionary = dictionary
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
-        var profileimageUrlString = dictionary["profile_image_url_https"] as? String
+        var profileimageUrlString = dictionary["profile_image_url_https"] as! String
+        print("PROFILE STRING AQUI: \(profileimageUrlString)")
         tagline = dictionary["description"] as? String
         
-        if let profileimageUrlString = profileimageUrlString {
-            profileimageUrl = NSURL(string: profileimageUrlString)
-        }
+        profileimageUrl = NSURL(string: profileimageUrlString)
+        print("PROFILE URL AQUI: \(profileimageUrl)")
     }
     
     func logout() {
