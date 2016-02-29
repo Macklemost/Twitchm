@@ -16,20 +16,30 @@ class User: NSObject {
     
     var name: String?
     var screenname: String?
-    var profileimageUrl: NSURL!
+    var profileimageUrl: NSURL?
     var tagline: String?
     var dictionary: NSDictionary
+    var followers: Int?
+    var numTweets: Int?
+    var following: Int?
+    var bannerImageUrl: NSURL?
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
-        var profileimageUrlString = dictionary["profile_image_url_https"] as! String
-        print("PROFILE STRING AQUI: \(profileimageUrlString)")
+        var profileimageUrlString = dictionary["profile_image_url_https"] as? String
+        var bannerImageUrlString = dictionary["profile_banner_url"]
         tagline = dictionary["description"] as? String
-        
+        if let profileimageUrlString = profileimageUrlString {
         profileimageUrl = NSURL(string: profileimageUrlString)
-        print("PROFILE URL AQUI: \(profileimageUrl)")
+        }
+        numTweets = dictionary["statuses_count"] as? Int
+        followers = dictionary["followers_count"] as? Int
+        following = dictionary["friends_count"] as? Int
+        if let bannerImageUrlString = bannerImageUrlString {
+            bannerImageUrl = NSURL(string: bannerImageUrlString as! String)
+        }
     }
     
     func logout() {

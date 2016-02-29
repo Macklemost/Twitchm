@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		03E18E2D7BCC43C00F53B471 /* Pods_Twitchm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC315308FDED6D7E82E7659 /* Pods_Twitchm.framework */; };
 		591C36031C7BF6A3007E10F9 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C36021C7BF6A3007E10F9 /* TweetDetailViewController.swift */; };
+		591C36071C82B918007E10F9 /* tweetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C36061C82B918007E10F9 /* tweetProfileViewController.swift */; };
+		591C36091C83A849007E10F9 /* userProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C36081C83A849007E10F9 /* userProfileViewController.swift */; };
+		591C360B1C83C92A007E10F9 /* SendTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C360A1C83C92A007E10F9 /* SendTweetViewController.swift */; };
 		5970C7051C71961000DA4CD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5970C7041C71961000DA4CD4 /* AppDelegate.swift */; };
 		5970C7071C71961000DA4CD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5970C7061C71961000DA4CD4 /* ViewController.swift */; };
 		5970C70A1C71961000DA4CD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5970C7081C71961000DA4CD4 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 		381DE0DE5C0B709C0F8C4571 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		56AB1A4D9DBFD6DB12FD496A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		591C36021C7BF6A3007E10F9 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
+		591C36061C82B918007E10F9 /* tweetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tweetProfileViewController.swift; sourceTree = "<group>"; };
+		591C36081C83A849007E10F9 /* userProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userProfileViewController.swift; sourceTree = "<group>"; };
+		591C360A1C83C92A007E10F9 /* SendTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendTweetViewController.swift; sourceTree = "<group>"; };
 		5970C7011C71961000DA4CD4 /* Twitchm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitchm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5970C7041C71961000DA4CD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5970C7061C71961000DA4CD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +141,9 @@
 				5970C7061C71961000DA4CD4 /* ViewController.swift */,
 				5970C7261C795FFD00DA4CD4 /* TweetsViewController.swift */,
 				591C36021C7BF6A3007E10F9 /* TweetDetailViewController.swift */,
+				591C36061C82B918007E10F9 /* tweetProfileViewController.swift */,
+				591C36081C83A849007E10F9 /* userProfileViewController.swift */,
+				591C360A1C83C92A007E10F9 /* SendTweetViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -274,12 +283,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5970C7271C795FFD00DA4CD4 /* TweetsViewController.swift in Sources */,
+				591C360B1C83C92A007E10F9 /* SendTweetViewController.swift in Sources */,
+				591C36091C83A849007E10F9 /* userProfileViewController.swift in Sources */,
 				5970C71C1C719BDE00DA4CD4 /* TwitterClient.swift in Sources */,
 				5970C71E1C71B0FB00DA4CD4 /* Twitchm-Bridging-Header.h in Sources */,
 				5970C7211C7552AA00DA4CD4 /* User.swift in Sources */,
 				5970C7231C7552D700DA4CD4 /* Tweet.swift in Sources */,
 				5970C7181C71998800DA4CD4 /* Twitchm.m in Sources */,
 				5970C72A1C7976BF00DA4CD4 /* twittterCell.swift in Sources */,
+				591C36071C82B918007E10F9 /* tweetProfileViewController.swift in Sources */,
 				5970C7071C71961000DA4CD4 /* ViewController.swift in Sources */,
 				5970C7051C71961000DA4CD4 /* AppDelegate.swift in Sources */,
 				591C36031C7BF6A3007E10F9 /* TweetDetailViewController.swift in Sources */,

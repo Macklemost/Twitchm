@@ -27,11 +27,9 @@ class twittterCell: UITableViewCell {
             usernameLabel.text = tweet.user?.screenname
             nameLabel.text = tweet.user?.name
             timestampLabel.text = String(tweet.createdAt!)
-            //profileImageView.setImageWithURL((tweet?.user!.profileimageUrl)!)
+            profileImageView.setImageWithURL((tweet?.user!.profileimageUrl)!)
             retweetLabel.text = ("\(tweet.retweet!)")
             likeLabel.text = ("\(tweet.favorites!)")
-            profileImageView.setImageWithURL(NSURL(string: "https://20something1thinking.files.wordpress.com/2014/05/12-positive-body-image-from-michelbritney00-blogspot-com-1.jpg")!)
-            
         }
     }
     
@@ -44,14 +42,24 @@ class twittterCell: UITableViewCell {
     }
     
     @IBAction func favoritePress(sender: AnyObject) {
-        self.tweet.favorites! += 1
+        if likeImageView.image == UIImage(named: "likeOn") {
+            self.tweet.favorites! -= 1
+            likeImageView.image = UIImage(named: "likeOff")
+        } else {
+            self.tweet.favorites! += 1
+            likeImageView.image = UIImage(named: "likeOn")
+        }
         likeLabel.text = ("\(tweet.favorites!)")
-        likeImageView.image = UIImage(named: "likeOn")
         
     }
     @IBAction func retweetPress(sender: AnyObject) {
-        self.tweet.retweet! += 1
+        if retweetImageView.image == UIImage(named: "retweetOn") {
+            self.tweet.retweet! -= 1
+            retweetImageView.image = UIImage(named: "retweetOff")
+        } else {
+            self.tweet.retweet! += 1
+            retweetImageView.image = UIImage(named: "retweetOn")
+        }
         retweetLabel.text = ("\(tweet.retweet!)")
-        retweetImageView.image = UIImage(named: "retweetOn")
     }
 }
