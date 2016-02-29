@@ -2,7 +2,7 @@
 
 Twitchm is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: 14 hours spent in total
+Time spent: 24 hours spent in total
 
 ## User Stories
 
@@ -13,27 +13,25 @@ The following **required** functionality is completed:
 - [X] The current signed in user will be persisted across restarts
 - [X] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp.
 - [X] Retweeting and favoriting should increment the retweet and favorite count.
-
-The following **optional** features are implemented:
-
-- [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
-- [ ] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count.
-- [ ] User can pull to refresh.
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
+- [X] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
+- [X] Profile page:
+   - [X] Contains the user header view
+   - [X] Contains a section with the users basic stats: # tweets, # following, # followers
+- [ ] Home Timeline: Tapping on a user image should bring up that user's profile page
+- [X] Compose Page: User can compose a new tweet by tapping on a compose button.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1. Types of errors
 2. Debugging Network Errors
+3. Passing an exact cell without pressing the cell itself
+4. How to send data for various tasks
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/9atuXV0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/4S1mm5c.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -43,6 +41,8 @@ I created about 3/4 of this app using the old videos and the other using the new
 miniscule errors in the code that I'm still not sure what they were, but were causing very strange and large problems.
 For instance I could retrieve user data but not tweet data, as that what unauthorized for some reason. Also, the imageView
 will not change with URLs for some reason so there's that as well. Overall this app was very difficult and time consuming.
+
+Most of this app is completed, but not all of it. I could not get the picture of a tweet to go to that user's profile page. However, the page that it should go to exists and is working so it is just the connection that is the error. Besides that, everything should be working just fine.
 
 ## License
 
