@@ -42,7 +42,7 @@ miniscule errors in the code that I'm still not sure what they were, but were ca
 For instance I could retrieve user data but not tweet data, as that what unauthorized for some reason. Also, the imageView
 will not change with URLs for some reason so there's that as well. Overall this app was very difficult and time consuming.
 
-Most of this app is completed, but not all of it. I could not get the picture of a tweet to go to that user's profile page. However, the page that it should go to exists and is working so it is just the connection that is the error. Besides that, everything should be working just fine.
+All of the app is complete. Using .superview was a lifesaver for figuring out how to send the cell information to another view through a button press.
 
 ## License
 
