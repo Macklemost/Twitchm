@@ -27,6 +27,8 @@ class SendTweetViewController: UIViewController {
         sendTweetButton.alpha = 0.1
         tweetTextView.alpha = 0.0
         sentLabel.alpha = 1
+        let tweet = tweetTextView.text.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        TwitterClient.sharedInstance.tweetSend(tweet!)
     }
 
 }

@@ -20,6 +20,8 @@ class twittterCell: UITableViewCell {
     @IBOutlet weak var retweetImageView: UIImageView!
     @IBOutlet weak var likeImageView: UIImageView!
     
+    var tweetID: Int = 0
+
     var tweet: Tweet! {
         didSet {
             tweetTextLabel.text = tweet.text
@@ -30,6 +32,8 @@ class twittterCell: UITableViewCell {
             profileImageView.setImageWithURL((tweet?.user!.profileimageUrl)!)
             retweetLabel.text = ("\(tweet.retweet!)")
             likeLabel.text = ("\(tweet.favorites!)")
+            tweetID = (tweet.tweetID! as? Int)!
+            
         }
     }
     
@@ -42,23 +46,34 @@ class twittterCell: UITableViewCell {
     }
     
     @IBAction func favoritePress(sender: AnyObject) {
-        if likeImageView.image == UIImage(named: "likeOn") {
-            self.tweet.favorites! -= 1
-            likeImageView.image = UIImage(named: "likeOff")
-        } else {
+        if self.likeImageView.image == UIImage(named: "likeOn") {
+            TwitterClient.sharedInstance.unfavorite(Int(tweetID), params: nil, completion: { (error) -> () in
             self.tweet.favorites! += 1
-            likeImageView.image = UIImage(named: "likeOn")
+                self.likeImageView.image = UIImage(named: "likeOff")
+            })
+        } else {
+            TwitterClient.sharedInstance.favorite(Int(tweetID), params: nil, completion: { (error) -> () in
+            self.tweet.favorites! -= 1
+            self.likeImageView.image = UIImage(named: "likeOn")
+            })
         }
-        likeLabel.text = ("\(tweet.favorites!)")
+        self.likeLabel.text = ("\(self.tweet.favorites!)")
+        
+        
         
     }
     @IBAction func retweetPress(sender: AnyObject) {
         if retweetImageView.image == UIImage(named: "retweetOn") {
-            self.tweet.retweet! -= 1
-            retweetImageView.image = UIImage(named: "retweetOff")
-        } else {
+            TwitterClient.sharedInstance.unretweet(Int(tweetID), params: nil, completion: { (error) -> () in
             self.tweet.retweet! += 1
-            retweetImageView.image = UIImage(named: "retweetOn")
+            self.retweetImageView.image = UIImage(named: "retweetOff")
+            })
+        } else {
+            TwitterClient.sharedInstance.retweet(Int(tweetID), params: nil, completion: { (error) -> () in
+            self.tweet.retweet! -= 1
+            self.retweetImageView.image = UIImage(named: "retweetOn")
+            })
+            
         }
         retweetLabel.text = ("\(tweet.retweet!)")
     }

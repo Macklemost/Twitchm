@@ -24,10 +24,15 @@ class tweetProfileViewController: UIViewController {
         
         nameLabel.text = tweet.user!.name
         profileImageView.setImageWithURL(tweet.user!.profileimageUrl!)
-        usernameLabel.text = tweet.user!.screenname
-        followersLabel.text = String(tweet.user!.followers)
-        followingLabel.text = String(tweet.user!.following)
-        numTweetsLabel.text = String(tweet.user!.numTweets)
+        usernameLabel.text = "@\((tweet.user!.screenname)!)"
+        followersLabel.text = "Followers: \(String((tweet.user!.followers)!))"
+        followingLabel.text = "Following: \(String((tweet.user!.following)!))"
+        numTweetsLabel.text = "Tweets: \(String((tweet.user!.numTweets)!))"
+        nameLabel.sizeToFit()
+        usernameLabel.sizeToFit()
+        followersLabel.sizeToFit()
+        followingLabel.sizeToFit()
+        numTweetsLabel.sizeToFit()
         
     }
     

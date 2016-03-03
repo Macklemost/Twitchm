@@ -38,22 +38,31 @@ class TweetDetailViewController: UIViewController {
     }
     @IBAction func retweetDetail(sender: AnyObject) {
         if retweetImageView.image == UIImage(named: "retweetOn") {
-            self.tweet.retweet! -= 1
-            retweetImageView.image = UIImage(named: "retweetOff")
+            TwitterClient.sharedInstance.unretweet(Int(tweet.tweetID!), params: nil, completion: { (error) -> () in
+                self.tweet.retweet! += 1
+                self.retweetImageView.image = UIImage(named: "retweetOff")
+            })
         } else {
-            self.tweet.retweet! += 1
-            retweetImageView.image = UIImage(named: "retweetOn")
-        }
+            TwitterClient.sharedInstance.retweet(Int(tweet.tweetID!), params: nil, completion: { (error) -> () in
+                self.tweet.retweet! -= 1
+                self.retweetImageView.image = UIImage(named: "retweetOn")
+            })
+
         retweetCountLabel.text = ("\(tweet.retweet!)")
     }
+    }
     @IBAction func likeDetail(sender: AnyObject) {
-        if likeImageView.image == UIImage(named: "likeOn") {
-            self.tweet.favorites! -= 1
-            likeImageView.image = UIImage(named: "likeOff")
+        if self.likeImageView.image == UIImage(named: "likeOn") {
+            TwitterClient.sharedInstance.unfavorite(Int(tweet.tweetID!), params: nil, completion: { (error) -> () in
+                self.tweet.favorites! += 1
+                self.likeImageView.image = UIImage(named: "likeOff")
+            })
         } else {
-            self.tweet.favorites! += 1
-            likeImageView.image = UIImage(named: "likeOn")
+            TwitterClient.sharedInstance.favorite(Int(tweet.tweetID!), params: nil, completion: { (error) -> () in
+                self.tweet.favorites! -= 1
+                self.likeImageView.image = UIImage(named: "likeOn")
+            })
         }
-        likeCountLabel.text = ("\(tweet.favorites!)")
+        likeCountLabel.text = ("\(self.tweet.favorites!)")
     }
 }
